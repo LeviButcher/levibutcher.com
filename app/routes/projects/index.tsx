@@ -9,16 +9,21 @@ export default function Index() {
   const data = useLoaderData();
 
   return (
-    <div className="container mx-auto">
-      <h1>We are at '/project'!!!</h1>
+    <section className="container mx-auto my-4">
+      <header className="mb-4 text-4xl">
+        <h1>Projects</h1>
+      </header>
       <div className="grid grid-cols-3 gap-2">
         {data.map((x: any) => (
-          <article className="bg-slate-300 rounded-sm p-2 hover:bg-slate-200">
+          <article
+            className="p-2 rounded-sm hover:bg-slate-200 bg-slate-300"
+            key={x.id}
+          >
             <header className="font-bold">{x.name}</header>
             <p>{x.description}</p>
           </article>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
