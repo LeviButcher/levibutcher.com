@@ -12,7 +12,13 @@ import {
 import styles from "./styles/app.css";
 
 export function links() {
-  return [{ rel: "stylesheet", href: styles }];
+  return [
+    { rel: "stylesheet", href: styles },
+    {
+      rel: "stylesheet",
+      href: "https://fonts.googleapis.com/css2?family=Roboto",
+    },
+  ];
 }
 
 export const meta: MetaFunction = () => ({
@@ -24,11 +30,31 @@ export const meta: MetaFunction = () => ({
 const PageHeader = () => {
   return (
     <header className="text-3xl bg-blue-400">
-      <nav className="container flex py-4 mx-auto align-bottom">
-        <Link to="/" className="mr-auto text-4xl">
+      <nav className="container flex gap-4 py-4 mx-auto align-bottom">
+        <Link
+          to="/"
+          className="mr-auto text-4xl transition-colors text-blue-50 hover:text-blue-300"
+        >
           <h4>Levi Butcher</h4>
         </Link>
-        <Link to="projects">Projects</Link>
+        <Link
+          to="resume"
+          className="transition-colors text-blue-50 hover:text-blue-300"
+        >
+          Resume
+        </Link>
+        <Link
+          to="projects"
+          className="transition-colors text-blue-50 hover:text-blue-300"
+        >
+          Projects
+        </Link>
+        <Link
+          to="blog"
+          className="transition-colors text-blue-50 hover:text-blue-300"
+        >
+          Blog
+        </Link>
       </nav>
     </header>
   );
@@ -68,7 +94,7 @@ export default function App() {
       <body className="relative">
         <div className="grid grid-rows-[auto,1fr,auto] h-screen">
           <PageHeader />
-          <main>
+          <main className="py-10">
             <Outlet />
           </main>
           <PageFooter />
