@@ -18,13 +18,15 @@ type Repo =
 function RepoCard({ repo }: { repo: Repo }) {
   console.log(repo.owner.avatar_url);
   return (
-    <article className="p-4 rounded-sm bg-slate-200 grid grid-rows-[auto,1fr,auto] gap-2 hover:scale-110 transition-transform shadow-sm">
+    <article className="p-4 rounded-sm bg-slate-200 grid grid-rows-[auto,1fr,auto] gap-2 hover:scale-110 transition-transform shadow-sm h-40 focus-within:scale-110">
       <header className="flex justify-between font-bold">
         <h4>{repo.name}</h4>
         <span>Stars: {repo.stargazers_count}</span>
       </header>
-      <section className="">
-        <p className="line-clamp-3">{repo.description}</p>
+      <section>
+        <p className="overflow-auto line-clamp-3 text-ellipsis">
+          {repo.description}
+        </p>
       </section>
       <footer className="flex justify-between">
         <a href={repo.svn_url}>Github</a>
@@ -38,11 +40,11 @@ export default function Index() {
   const { projects } = useLoaderData<typeof loader>();
 
   return (
-    <section className="container mx-auto my-4">
+    <section className="container px-8 mx-auto my-4">
       <header className="mb-8 text-4xl">
         <h1>Projects</h1>
       </header>
-      <section className="grid grid-cols-3 gap-10 align-top">
+      <section className="grid gap-10 align-top grid-cols-[repeat(auto-fit,minmax(18rem,1fr))]">
         {projects.map((x) => (
           <RepoCard repo={x} key={x.id} />
         ))}

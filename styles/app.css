@@ -3,10 +3,5 @@
 @tailwind utilities;
 @tailwind variants;
 
-html,
-body {
-  font-family: "Roboto", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
 @layer components {
 }

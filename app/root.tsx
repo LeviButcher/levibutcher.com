@@ -12,13 +12,7 @@ import {
 import styles from "./styles/app.css";
 
 export function links() {
-  return [
-    { rel: "stylesheet", href: styles },
-    {
-      rel: "stylesheet",
-      href: "https://fonts.googleapis.com/css2?family=Roboto",
-    },
-  ];
+  return [{ rel: "stylesheet", href: styles }];
 }
 
 export const meta: MetaFunction = () => ({
@@ -30,7 +24,7 @@ export const meta: MetaFunction = () => ({
 const PageHeader = () => {
   return (
     <header className="text-3xl bg-blue-400">
-      <nav className="container flex gap-4 py-4 mx-auto align-bottom">
+      <nav className="container flex gap-4 px-8 py-4 mx-auto align-bottom">
         <Link
           to="/"
           className="mr-auto text-4xl transition-colors text-blue-50 hover:text-blue-300"
@@ -62,7 +56,7 @@ const PageHeader = () => {
 const PageFooter = () => {
   return (
     <footer className="bg-slate-300">
-      <div className="container p-2 mx-auto">
+      <div className="container p-2 px-8 mx-auto">
         Created by Levi Butcher - Built with Remix!!!
       </div>
     </footer>
