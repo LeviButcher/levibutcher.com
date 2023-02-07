@@ -16,7 +16,6 @@ type Repo =
   RestEndpointMethodTypes["repos"]["listForUser"]["response"]["data"][0];
 
 function RepoCard({ repo }: { repo: Repo }) {
-  console.log(repo.owner.avatar_url);
   return (
     <article className="p-4 rounded-sm bg-slate-200 grid grid-rows-[auto,1fr,auto] gap-2 hover:scale-110 transition-transform shadow-sm h-40 focus-within:scale-110">
       <header className="flex justify-between font-bold">
