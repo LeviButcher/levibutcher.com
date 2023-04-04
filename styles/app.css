@@ -4,15 +4,4 @@
 @tailwind variants;
 
 @layer components {
-  .buffer {
-    @apply container mx-auto;
-  }
-
-  .buffer-padded {
-    @apply container mx-auto px-8;
-  }
-
-  .buffer-full {
-    @apply container;
-  }
-}
+ }
